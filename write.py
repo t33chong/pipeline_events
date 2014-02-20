@@ -33,6 +33,6 @@ with open(LAST_INDEXED, 'w') as f:
 
 # Write multiple Solr queries to the events directory
 for i in range(SPLIT):
-    query = 'iscontent:true AND lang:en AND wam:[50 TO *] AND indexed:[%sZ TO %sZ]' % (datetime.isoformat(delimiters[i]), datetime.isoformat(delimiters[i+1]))
+    query = 'iscontent:true AND lang:en AND indexed:[%sZ TO %sZ]' % (datetime.isoformat(delimiters[i]), datetime.isoformat(delimiters[i+1]))
     with open('/data/events/%d' % i, 'w') as f:
         f.write(query)
